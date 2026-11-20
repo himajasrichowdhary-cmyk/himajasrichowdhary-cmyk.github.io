@@ -54,7 +54,7 @@ nav{
 
 nav .links{
  display:flex;
- gap:22px;
+ gap:20px;
  flex-wrap:wrap;
 }
 
@@ -62,6 +62,7 @@ nav a{
  color:var(--muted);
  text-decoration:none;
  font-size:13px;
+ transition:.3s;
 }
 
 nav a:hover{
@@ -149,6 +150,12 @@ section{
  border:1px solid var(--line);
  border-radius:20px;
  text-align:center;
+ transition:.3s;
+}
+
+.profile:hover{
+ border-color:var(--green);
+ transform:translateY(-6px);
 }
 
 .avatar{
@@ -305,6 +312,31 @@ section{
  color:var(--muted);
 }
 
+.social-links{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:15px;
+ margin:30px 0;
+}
+
+.social-links a{
+ text-decoration:none;
+ color:var(--green);
+ border:1px solid #334155;
+ padding:14px 22px;
+ border-radius:10px;
+ background:#111827;
+ transition:.3s;
+ font-weight:bold;
+}
+
+.social-links a:hover{
+ background:var(--green);
+ color:#080b12;
+ transform:translateY(-5px);
+}
+
 .contact{
  text-align:center;
  background:radial-gradient(ellipse at center,#192b44,transparent 75%);
@@ -382,6 +414,8 @@ footer span{
 </head>
 
 <body>
+
+<!-- NAVIGATION -->
 
 <nav>
  <div class="logo">K.H<span>.</span></div>
@@ -812,7 +846,7 @@ footer span{
 
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT AND SOCIAL LINKS -->
 
 <section id="contact" class="contact">
 
@@ -828,14 +862,30 @@ footer span{
   sharing ideas and connecting with people.
  </p>
 
- <a class="btn green"
- href="mailto:himajasrichowdhary@gmail.com">
-  Email Me ↗
- </a>
+ <div class="social-links">
 
- <p>
-  himajasrichowdhary@gmail.com
- </p>
+  <a href="https://github.com/himajasrichowdhary-cmyk"
+     target="_blank" rel="noopener noreferrer">
+     GitHub Profile ↗
+  </a>
+
+  <a href="https://github.com/himajasrichowdhary-cmyk/himajasrichowdhary-cmyk.github.io"
+     target="_blank" rel="noopener noreferrer">
+     GitHub Repository ↗
+  </a>
+
+  <a href="https://www.linkedin.com/in/himajasri-chowdhary-477b62387/"
+     target="_blank" rel="noopener noreferrer">
+     LinkedIn Profile ↗
+  </a>
+
+  <a href="mailto:himajasrichowdhary@gmail.com">
+     Email Me ↗
+  </a>
+
+ </div>
+
+ <p>himajasrichowdhary@gmail.com</p>
 
 </section>
 
