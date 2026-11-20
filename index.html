@@ -1,104 +1,439 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Himajasri Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f0ff;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background: #673ab7;
-            color: white;
-            padding: 25px;
-        }
-        nav {
-            background: #4527a0;
-            padding: 15px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 12px;
-        }
-        section {
-            background: white;
-            margin: 25px auto;
-            padding: 25px;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px #ccc;
-        }
-        h2 {
-            color: #673ab7;
-        }
-        footer {
-            background: #4527a0;
-            color: white;
-            padding: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himajasri | Creative Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #090d17;
+  color: #f5f7ff;
+  line-height: 1.7;
+}
+
+:root {
+  --green: #a5ff67;
+  --muted: #a5afc1;
+  --panel: #141e30;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  background: rgba(9,13,23,.95);
+  border-bottom: 1px solid #273044;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+nav .links {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--green);
+}
+
+.roll {
+  border: 1px solid #628b45;
+  padding: 7px 15px;
+  border-radius: 25px;
+  color: var(--green);
+  font-size: 12px;
+}
+
+.hero {
+  min-height: 690px;
+  padding: 110px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  background:
+    radial-gradient(ellipse at 80% 40%, #192b44 0%, transparent 60%);
+}
+
+.intro {
+  max-width: 650px;
+}
+
+.tag {
+  color: var(--green);
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-size: clamp(50px, 8vw, 85px);
+  line-height: 1.08;
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  color: var(--green);
+}
+
+.hero p {
+  color: #c2cada;
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 13px 20px;
+  border: 1px solid #344158;
+  border-radius: 9px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn.primary {
+  background: var(--green);
+  color: #10180d;
+  border-color: var(--green);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+}
+
+.profile {
+  background: linear-gradient(145deg,#1b283b,#101725);
+  border: 1px solid #354056;
+  border-radius: 24px;
+  padding: 28px;
+  width: 280px;
+  text-align: center;
+  transition: .4s;
+}
+
+.profile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 45px #a5ff671c;
+}
+
+.avatar {
+  height: 210px;
+  border-radius: 18px;
+  background: linear-gradient(145deg,#203b4b,#111b2c);
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  font-size: 75px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.profile h3 {
+  font-size: 20px;
+}
+
+.profile p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+section {
+  padding: 90px 7%;
+  border-top: 1px solid #202b3c;
+  scroll-margin-top: 70px;
+}
+
+.section-tag {
+  color: var(--green);
+  font-family: monospace;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+section h2 {
+  font-size: clamp(32px,5vw,48px);
+  margin-bottom: 30px;
+}
+
+.about-text {
+  color: var(--muted);
+  max-width: 750px;
+  font-size: 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  padding: 25px;
+  border: 1px solid #29364b;
+  border-radius: 15px;
+  transition: .3s;
+}
+
+.card:hover {
+  border-color: var(--green);
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.card p, .card li {
+  color: var(--muted);
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.number {
+  font-size: 35px;
+  color: var(--green);
+  font-weight: bold;
+}
+
+.contact {
+  text-align: center;
+  background: radial-gradient(ellipse at center,#192b44,transparent 75%);
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid #29364b;
+}
+
+footer span {
+  color: var(--green);
+}
+
+@media(max-width:750px) {
+  nav {
+    padding: 15px 5%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav .links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 18px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 75px 6%;
+  }
+
+  .profile {
+    width: 100%;
+    max-width: 330px;
+    align-self: center;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Welcome to My Portfolio</h1>
-    <h2 style="color:white;">I'm Himajasri</h2>
-    <p>Roll Number: 10</p>
-    <p>Student | Learner | Future Developer</p>
-</header>
-
 <nav>
+  <div class="logo">H<span>S.</span></div>
+
+  <div class="links">
     <a href="#about">About</a>
-    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
     <a href="#contact">Contact</a>
+  </div>
+
+  <div class="roll">ROLL NO. 10</div>
 </nav>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>Hello! My name is Himajasri.</p>
-    <p>I am a student interested in technology
-    and learning new skills.</p>
-</section>
+<header class="hero">
+  <div class="intro">
+    <div class="tag">STUDENT · ASPIRING WEB DEVELOPER</div>
 
-<section id="education">
-    <h2>My Education</h2>
-    <p>Name: Himajasri</p>
-    <p>Roll Number: 10</p>
-    <p>College: Add your college name</p>
-    <p>Course: Add your course name</p>
+    <h1>
+      Hello,<br>
+      I'm <span>Himajasri.</span>
+    </h1>
+
+    <p>
+      A passionate student exploring technology,
+      creativity and web development. I love
+      learning new things and turning ideas into reality.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#projects">Explore my projects ↗</a>
+      <a class="btn" href="#about">Get to know me</a>
+    </div>
+  </div>
+
+  <div class="profile">
+    <div class="avatar">HS</div>
+    <h3>Himajasri</h3>
+    <p>Student Portfolio</p>
+    <p>ROLL NO.</p>
+    <h3 style="color:#a5ff67">34</h3>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-tag">01 / WHO I AM</div>
+  <h2>Curious by nature.<br>Creative by passion.</h2>
+
+  <p class="about-text">
+    Hello! I'm Himajasri. I am a student who enjoys
+    discovering new technologies, learning programming
+    and developing creative ideas. My goal is to improve
+    my skills and become a successful professional.
+  </p>
 </section>
 
 <section id="skills">
-    <h2>My Skills</h2>
-    <p>HTML</p>
-    <p>CSS</p>
-    <p>Communication</p>
-    <p>Problem Solving</p>
+  <div class="section-tag">02 / WHAT I DO</div>
+  <h2>My Skills</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>01. HTML</h3>
+      <p>Building the structure of beautiful websites.</p>
+    </div>
+
+    <div class="card">
+      <h3>02. CSS</h3>
+      <p>Creating attractive designs and layouts.</p>
+    </div>
+
+    <div class="card">
+      <h3>03. Communication</h3>
+      <p>Sharing ideas and learning with others.</p>
+    </div>
+
+    <div class="card">
+      <h3>04. Creativity</h3>
+      <p>Thinking differently and solving problems.</p>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-    <h2>My Projects</h2>
-    <p>Personal Portfolio Website</p>
-    <p>Created using HTML and CSS.</p>
+  <div class="section-tag">03 / MY WORK</div>
+  <h2>Featured Projects</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="number">01</div>
+      <h3>Personal Portfolio</h3>
+      <p>A personal website designed using HTML and CSS
+      to showcase my profile, skills and work.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">02</div>
+      <h3>Future Project</h3>
+      <p>A space for my next creative and technical project.</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-    <h2>Contact Me</h2>
-    <p>Name: Himajasri</p>
-    <p>Email: Add your email address</p>
+<section id="journey">
+  <div class="section-tag">04 / MY JOURNEY</div>
+  <h2>Learning never stops.</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>My Education</h3>
+      <p>Student: Himajasri</p>
+      <p>Roll Number: 10</p>
+      <p>College: Add your college name</p>
+      <p>Course: Add your course name</p>
+    </div>
+
+    <div class="card">
+      <h3>My Goal</h3>
+      <p>To keep learning, improve my technical
+      knowledge and build useful digital solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-tag">05 / GET IN TOUCH</div>
+  <h2>Let's connect!</h2>
+  <p>Thank you for visiting my personal portfolio.</p>
+  <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">
+    Contact Me ↗
+  </a>
 </section>
 
 <footer>
-    <p>© 2026 Himajasri | My Portfolio</p>
+  Designed with <span>♥</span> by Himajasri
+  <br>
+  © 2026 All Rights Reserved.
 </footer>
 
 </body>
