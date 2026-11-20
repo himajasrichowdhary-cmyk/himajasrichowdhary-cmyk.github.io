@@ -4,293 +4,379 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Himajasri | Creative Portfolio</title>
+<title>K. Himajasri | Portfolio</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ scroll-behavior:smooth;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #090d17;
-  color: #f5f7ff;
-  line-height: 1.7;
+:root{
+ --bg:#090d17;
+ --card:#121827;
+ --green:#a5ff67;
+ --white:#f5f6fb;
+ --muted:#a6b1c5;
+ --line:#29364b;
 }
 
-:root {
-  --green: #a5ff67;
-  --muted: #a5afc1;
-  --panel: #141e30;
+body{
+ background:var(--bg);
+ color:var(--white);
+ font-family:Arial,sans-serif;
+ line-height:1.75;
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 7%;
-  background: rgba(9,13,23,.95);
-  border-bottom: 1px solid #273044;
+nav{
+ position:sticky;
+ top:0;
+ z-index:10;
+ background:#090d17ee;
+ backdrop-filter:blur(12px);
+ padding:17px 6%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid var(--line);
 }
 
-.logo {
-  font-size: 25px;
-  font-weight: bold;
+.logo{
+ font-size:26px;
+ font-weight:bold;
 }
 
-.logo span {
-  color: var(--green);
+.logo span{
+ color:var(--green);
 }
 
-nav .links {
-  display: flex;
-  gap: 24px;
+nav .links{
+ display:flex;
+ gap:22px;
+ flex-wrap:wrap;
 }
 
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  transition: .3s;
+nav a{
+ color:var(--muted);
+ text-decoration:none;
+ font-size:13px;
 }
 
-nav a:hover {
-  color: var(--green);
+nav a:hover{
+ color:var(--green);
 }
 
-.roll {
-  border: 1px solid #628b45;
-  padding: 7px 15px;
-  border-radius: 25px;
-  color: var(--green);
-  font-size: 12px;
+.roll{
+ border:1px solid #628b45;
+ padding:6px 13px;
+ border-radius:25px;
+ color:var(--green);
+ font-size:12px;
 }
 
-.hero {
-  min-height: 690px;
-  padding: 110px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  background:
-    radial-gradient(ellipse at 80% 40%, #192b44 0%, transparent 60%);
+section{
+ padding:85px 6%;
+ border-bottom:1px solid #202838;
+ scroll-margin-top:70px;
 }
 
-.intro {
-  max-width: 650px;
+.hero{
+ min-height:680px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:40px;
+ padding:90px 6%;
+ background:radial-gradient(ellipse at 80% 35%,#1a2b44,transparent 65%);
 }
 
-.tag {
-  color: var(--green);
-  letter-spacing: 3px;
-  font-size: 12px;
-  margin-bottom: 28px;
+.hero-content{
+ max-width:720px;
 }
 
-.hero h1 {
-  font-size: clamp(50px, 8vw, 85px);
-  line-height: 1.08;
-  letter-spacing: -4px;
+.tag{
+ font-size:12px;
+ letter-spacing:2px;
+ color:var(--green);
+ margin-bottom:24px;
 }
 
-.hero h1 span {
-  color: var(--green);
+.hero h1{
+ font-size:clamp(55px,9vw,100px);
+ line-height:1.05;
+ letter-spacing:-5px;
 }
 
-.hero p {
-  color: #c2cada;
-  margin-top: 24px;
-  font-size: 18px;
+.hero h1 span{
+ color:var(--green);
 }
 
-.buttons {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+.hero p{
+ font-size:18px;
+ color:var(--muted);
+ margin-top:25px;
 }
 
-.btn {
-  padding: 13px 20px;
-  border: 1px solid #344158;
-  border-radius: 9px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: .3s;
+.btn{
+ display:inline-block;
+ padding:12px 20px;
+ border:1px solid var(--line);
+ border-radius:8px;
+ margin:25px 10px 0 0;
+ text-decoration:none;
+ color:white;
+ font-weight:bold;
+ transition:.3s;
 }
 
-.btn.primary {
-  background: var(--green);
-  color: #10180d;
-  border-color: var(--green);
+.btn.green{
+ background:var(--green);
+ color:#10170b;
+ border-color:var(--green);
 }
 
-.btn:hover {
-  transform: translateY(-4px);
-  border-color: var(--green);
+.btn:hover{
+ transform:translateY(-4px);
 }
 
-.profile {
-  background: linear-gradient(145deg,#1b283b,#101725);
-  border: 1px solid #354056;
-  border-radius: 24px;
-  padding: 28px;
-  width: 280px;
-  text-align: center;
-  transition: .4s;
+.profile{
+ width:270px;
+ flex-shrink:0;
+ padding:25px;
+ background:var(--card);
+ border:1px solid var(--line);
+ border-radius:20px;
+ text-align:center;
 }
 
-.profile:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 45px #a5ff671c;
+.avatar{
+ height:200px;
+ background:linear-gradient(140deg,#20384b,#111827);
+ display:grid;
+ place-items:center;
+ border-radius:14px;
+ font-size:70px;
+ color:var(--green);
+ margin-bottom:20px;
 }
 
-.avatar {
-  height: 210px;
-  border-radius: 18px;
-  background: linear-gradient(145deg,#203b4b,#111b2c);
-  display: grid;
-  place-items: center;
-  color: var(--green);
-  font-size: 75px;
-  font-weight: bold;
-  margin-bottom: 22px;
+.profile p{
+ color:var(--muted);
+ font-size:14px;
 }
 
-.profile h3 {
-  font-size: 20px;
+.heading{
+ display:flex;
+ justify-content:space-between;
+ gap:25px;
+ align-items:flex-end;
+ margin-bottom:40px;
 }
 
-.profile p {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 5px 0;
+.heading h2{
+ font-size:clamp(35px,5vw,55px);
+ line-height:1.15;
+ letter-spacing:-2px;
 }
 
-section {
-  padding: 90px 7%;
-  border-top: 1px solid #202b3c;
-  scroll-margin-top: 70px;
+.heading>p{
+ max-width:400px;
+ color:var(--muted);
 }
 
-.section-tag {
-  color: var(--green);
-  font-family: monospace;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
+.heading h2 span{
+ color:var(--green);
 }
 
-section h2 {
-  font-size: clamp(32px,5vw,48px);
-  margin-bottom: 30px;
+.about-grid{
+ display:grid;
+ grid-template-columns:1fr 1.2fr;
+ gap:50px;
 }
 
-.about-text {
-  color: var(--muted);
-  max-width: 750px;
-  font-size: 18px;
+.statement{
+ font-size:32px;
+ line-height:1.4;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
+.statement span{
+ color:var(--green);
 }
 
-.card {
-  background: var(--panel);
-  padding: 25px;
-  border: 1px solid #29364b;
-  border-radius: 15px;
-  transition: .3s;
+.description p{
+ color:var(--muted);
+ margin-bottom:18px;
 }
 
-.card:hover {
-  border-color: var(--green);
-  transform: translateY(-6px);
+.tags{
+ display:flex;
+ flex-wrap:wrap;
+ gap:10px;
+ margin-top:20px;
 }
 
-.card h3 {
-  color: var(--green);
-  margin-bottom: 12px;
+.chip{
+ border:1px solid var(--line);
+ background:var(--card);
+ padding:9px 13px;
+ border-radius:6px;
+ font-size:13px;
 }
 
-.card p, .card li {
-  color: var(--muted);
+.cards{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:18px;
 }
 
-.card ul {
-  padding-left: 20px;
+.card{
+ background:var(--card);
+ border:1px solid var(--line);
+ padding:25px;
+ border-radius:14px;
+ transition:.3s;
 }
 
-.number {
-  font-size: 35px;
-  color: var(--green);
-  font-weight: bold;
+.card:hover{
+ border-color:var(--green);
+ transform:translateY(-4px);
 }
 
-.contact {
-  text-align: center;
-  background: radial-gradient(ellipse at center,#192b44,transparent 75%);
+.card small{
+ color:var(--green);
+ letter-spacing:1px;
 }
 
-.contact p {
-  color: var(--muted);
-  margin-bottom: 25px;
+.card h3{
+ font-size:21px;
+ margin:10px 0;
 }
 
-footer {
-  padding: 25px;
-  text-align: center;
-  color: var(--muted);
-  border-top: 1px solid #29364b;
+.card p{
+ color:var(--muted);
 }
 
-footer span {
-  color: var(--green);
+.steps{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:12px;
 }
 
-@media(max-width:750px) {
-  nav {
-    padding: 15px 5%;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+.step{
+ background:var(--card);
+ border:1px solid var(--line);
+ padding:20px;
+ border-radius:12px;
+}
 
-  nav .links {
-    order: 3;
-    width: 100%;
-    overflow-x: auto;
-    gap: 18px;
-  }
+.step small{
+ color:var(--green);
+}
 
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 75px 6%;
-  }
+.step h3{
+ margin:12px 0;
+}
 
-  .profile {
-    width: 100%;
-    max-width: 330px;
-    align-self: center;
-  }
+.timeline{
+ border-left:1px solid #53654c;
+ margin-left:12px;
+ padding-left:28px;
+}
 
-  .hero h1 {
-    letter-spacing: -2px;
-  }
+.timeline-item{
+ position:relative;
+ margin-bottom:30px;
+}
 
-  section {
-    padding: 65px 6%;
-  }
+.timeline-item:before{
+ content:"";
+ position:absolute;
+ left:-35px;
+ top:9px;
+ width:12px;
+ height:12px;
+ background:var(--green);
+ border-radius:50%;
+}
+
+.timeline-item p{
+ color:var(--muted);
+}
+
+.contact{
+ text-align:center;
+ background:radial-gradient(ellipse at center,#192b44,transparent 75%);
+}
+
+.contact h2{
+ font-size:clamp(40px,7vw,75px);
+ line-height:1.2;
+}
+
+.contact h2 span{
+ color:var(--green);
+}
+
+.contact p{
+ color:var(--muted);
+ margin:20px;
+}
+
+footer{
+ text-align:center;
+ padding:25px;
+ color:var(--muted);
+}
+
+footer span{
+ color:var(--green);
+}
+
+@media(max-width:750px){
+
+ nav{
+  flex-direction:column;
+  gap:12px;
+ }
+
+ nav .links{
+  gap:13px;
+  justify-content:center;
+ }
+
+ .hero{
+  flex-direction:column;
+  align-items:flex-start;
+  padding-top:70px;
+ }
+
+ .profile{
+  width:100%;
+  max-width:330px;
+ }
+
+ .about-grid{
+  grid-template-columns:1fr;
+ }
+
+ .heading{
+  flex-direction:column;
+  align-items:flex-start;
+ }
+
+ .cards,.steps{
+  grid-template-columns:1fr;
+ }
+
+ .hero h1{
+  letter-spacing:-3px;
+ }
+
+ section{
+  padding:65px 6%;
+ }
 }
 </style>
 </head>
@@ -298,142 +384,467 @@ footer span {
 <body>
 
 <nav>
-  <div class="logo">H<span>S.</span></div>
+ <div class="logo">K.H<span>.</span></div>
 
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#journey">Journey</a>
-    <a href="#contact">Contact</a>
-  </div>
+ <div class="links">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#approach">Approach</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+ </div>
 
-  <div class="roll">ROLL NO. 10</div>
+ <div class="roll">CSE · ROLL NO. 34</div>
 </nav>
 
+<!-- HOME -->
+
 <header class="hero">
-  <div class="intro">
-    <div class="tag">STUDENT · ASPIRING WEB DEVELOPER</div>
 
-    <h1>
-      Hello,<br>
-      I'm <span>Himajasri.</span>
-    </h1>
+ <div class="hero-content">
 
-    <p>
-      A passionate student exploring technology,
-      creativity and web development. I love
-      learning new things and turning ideas into reality.
-    </p>
-
-    <div class="buttons">
-      <a class="btn primary" href="#projects">Explore my projects ↗</a>
-      <a class="btn" href="#about">Get to know me</a>
-    </div>
+  <div class="tag">
+   COMPUTER SCIENCE · UTTARANCHAL UNIVERSITY
   </div>
 
-  <div class="profile">
-    <div class="avatar">HS</div>
-    <h3>Himajasri</h3>
-    <p>Student Portfolio</p>
-    <p>ROLL NO.</p>
-    <h3 style="color:#a5ff67">34</h3>
-  </div>
+  <h1>
+   Hi, I'm<br>
+   <span>K. Himajasri.</span>
+  </h1>
+
+  <p>
+   A curious Computer Science student passionate
+   about technology, creative thinking and building
+   a future through innovation. I love learning,
+   exploring new ideas and developing practical skills.
+  </p>
+
+  <a class="btn green" href="#projects">
+   Explore My Work ↗
+  </a>
+
+  <a class="btn" href="#about">
+   Discover My Story
+  </a>
+
+ </div>
+
+ <div class="profile">
+
+  <div class="avatar">KH.</div>
+
+  <h3>K. Himajasri</h3>
+
+  <p>Computer Science Student</p>
+
+  <p>ROLL NUMBER</p>
+
+  <h2 style="color:#a5ff67">34</h2>
+
+ </div>
+
 </header>
 
-<section id="about">
-  <div class="section-tag">01 / WHO I AM</div>
-  <h2>Curious by nature.<br>Creative by passion.</h2>
+<!-- ABOUT -->
 
-  <p class="about-text">
-    Hello! I'm Himajasri. I am a student who enjoys
-    discovering new technologies, learning programming
-    and developing creative ideas. My goal is to improve
-    my skills and become a successful professional.
+<section id="about">
+
+ <div class="tag">01 / WHO I AM</div>
+
+ <div class="heading">
+
+  <h2>
+   Curious by nature.<br>
+   Building with purpose.
+  </h2>
+
+  <p>
+   A snapshot of my academic background,
+   interests and future ambitions.
   </p>
+
+ </div>
+
+ <div class="about-grid">
+
+  <div class="statement">
+   I enjoy exploring technology and turning
+   everyday ideas into
+   <span>meaningful possibilities.</span>
+  </div>
+
+  <div class="description">
+
+   <p>
+    I'm K. Himajasri, a Computer Science student
+    at Uttranchal University. I am passionate
+    about exploring the world of technology,
+    understanding how software works and
+    discovering how digital solutions can
+    solve real-world problems.
+   </p>
+
+   <p>
+    I believe learning is a continuous journey.
+    Every new concept, coding challenge and
+    project gives me an opportunity to improve
+    my knowledge and strengthen my
+    problem-solving abilities.
+   </p>
+
+   <p>
+    My goal is to grow as a technology
+    professional, gain practical experience
+    and create useful digital experiences.
+   </p>
+
+   <div class="tags">
+    <span class="chip">Computer Science</span>
+    <span class="chip">Technology</span>
+    <span class="chip">Creative Thinking</span>
+    <span class="chip">Problem Solving</span>
+    <span class="chip">Roll No. 34</span>
+   </div>
+
+  </div>
+ </div>
+
 </section>
+
+<!-- SKILLS -->
 
 <section id="skills">
-  <div class="section-tag">02 / WHAT I DO</div>
-  <h2>My Skills</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3>01. HTML</h3>
-      <p>Building the structure of beautiful websites.</p>
-    </div>
+ <div class="tag">02 / MY TOOLKIT</div>
 
-    <div class="card">
-      <h3>02. CSS</h3>
-      <p>Creating attractive designs and layouts.</p>
-    </div>
+ <div class="heading">
 
-    <div class="card">
-      <h3>03. Communication</h3>
-      <p>Sharing ideas and learning with others.</p>
-    </div>
+  <h2>
+   Technologies &<br>
+   concepts.
+  </h2>
 
-    <div class="card">
-      <h3>04. Creativity</h3>
-      <p>Thinking differently and solving problems.</p>
-    </div>
+  <p>
+   My technical learning areas and concepts
+   I am exploring and developing.
+  </p>
+
+ </div>
+
+ <div class="cards">
+
+  <div class="card">
+   <small>01 / PROGRAMMING</small>
+   <h3>Programming Languages</h3>
+   <p>
+    Include the languages you have studied,
+    such as C, Java and Python.
+   </p>
+   <div class="tags">
+    <span class="chip">C</span>
+    <span class="chip">Java</span>
+    <span class="chip">Python</span>
+   </div>
   </div>
+
+  <div class="card">
+   <small>02 / FRONTEND</small>
+   <h3>Web Development</h3>
+   <p>
+    Learning to create attractive,
+    responsive and user-friendly websites.
+   </p>
+   <div class="tags">
+    <span class="chip">HTML</span>
+    <span class="chip">CSS</span>
+    <span class="chip">JavaScript</span>
+   </div>
+  </div>
+
+  <div class="card">
+   <small>03 / DATABASE</small>
+   <h3>Database Concepts</h3>
+   <p>
+    Understanding database organization,
+    storage and data management.
+   </p>
+   <div class="tags">
+    <span class="chip">SQL</span>
+    <span class="chip">DBMS</span>
+   </div>
+  </div>
+
+  <div class="card">
+   <small>04 / CORE CONCEPTS</small>
+   <h3>Computer Science</h3>
+   <p>
+    Exploring fundamental concepts
+    and logical problem-solving.
+   </p>
+   <div class="tags">
+    <span class="chip">OOP</span>
+    <span class="chip">Data Structures</span>
+    <span class="chip">Algorithms</span>
+   </div>
+  </div>
+
+ </div>
+
 </section>
+
+<!-- APPROACH -->
+
+<section id="approach">
+
+ <div class="tag">03 / MY APPROACH</div>
+
+ <div class="heading">
+
+  <h2>
+   From curiosity<br>
+   to capability.
+  </h2>
+
+  <p>
+   How I approach learning,
+   understanding and creating solutions.
+  </p>
+
+ </div>
+
+ <div class="steps">
+
+  <div class="step">
+   <small>01 / EXPLORE</small>
+   <h3>Discover</h3>
+   <p>
+    Explore new ideas, technologies
+    and concepts.
+   </p>
+  </div>
+
+  <div class="step">
+   <small>02 / LEARN</small>
+   <h3>Understand</h3>
+   <p>
+    Build knowledge through study
+    and regular practice.
+   </p>
+  </div>
+
+  <div class="step">
+   <small>03 / CREATE</small>
+   <h3>Experiment</h3>
+   <p>
+    Apply concepts through practical
+    exercises and projects.
+   </p>
+  </div>
+
+  <div class="step">
+   <small>04 / IMPROVE</small>
+   <h3>Grow</h3>
+   <p>
+    Learn from challenges and
+    continuously improve.
+   </p>
+  </div>
+
+ </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+ <div class="tag">04 / MY EDUCATION</div>
+
+ <div class="heading">
+
+  <h2>
+   Education &<br>
+   ambitions.
+  </h2>
+
+  <p>
+   My academic foundation and
+   future direction.
+  </p>
+
+ </div>
+
+ <div class="cards">
+
+  <div class="card">
+   <small>ACADEMIC BACKGROUND</small>
+   <h3>Computer Science</h3>
+   <p>Uttranchal University</p>
+   <p>Course: Computer Science</p>
+   <p>Roll Number: 34</p>
+  </div>
+
+  <div class="card">
+   <small>FUTURE GOALS</small>
+   <h3>Learning by Building</h3>
+   <p>
+    I aspire to strengthen my programming
+    knowledge, develop practical skills,
+    explore emerging technologies and
+    work on meaningful software projects.
+   </p>
+  </div>
+
+ </div>
+
+</section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
-  <div class="section-tag">03 / MY WORK</div>
-  <h2>Featured Projects</h2>
 
-  <div class="cards">
-    <div class="card">
-      <div class="number">01</div>
-      <h3>Personal Portfolio</h3>
-      <p>A personal website designed using HTML and CSS
-      to showcase my profile, skills and work.</p>
-    </div>
+ <div class="tag">05 / SELECTED WORK</div>
 
-    <div class="card">
-      <div class="number">02</div>
-      <h3>Future Project</h3>
-      <p>A space for my next creative and technical project.</p>
-    </div>
+ <div class="heading">
+
+  <h2>
+   Ideas into<br>
+   projects.
+  </h2>
+
+  <p>
+   A showcase of my academic
+   and personal learning projects.
+  </p>
+
+ </div>
+
+ <div class="cards">
+
+  <div class="card">
+   <small>PROJECT 01 / WEB DEVELOPMENT</small>
+   <h3>Personal Portfolio Website</h3>
+   <p>
+    A creative personal website designed
+    to introduce myself, present my
+    educational background, showcase
+    my skills and share my journey.
+   </p>
+   <div class="tags">
+    <span class="chip">HTML</span>
+    <span class="chip">CSS</span>
+   </div>
   </div>
+
+  <div class="card">
+   <small>PROJECT 02 / ACADEMIC</small>
+   <h3>Academic Project</h3>
+   <p>
+    Add your actual academic project
+    title, its purpose, the problem it
+    solves and the technologies used.
+   </p>
+   <div class="tags">
+    <span class="chip">Your Technology</span>
+    <span class="chip">Your Tools</span>
+   </div>
+  </div>
+
+ </div>
+
 </section>
+
+<!-- JOURNEY -->
 
 <section id="journey">
-  <div class="section-tag">04 / MY JOURNEY</div>
-  <h2>Learning never stops.</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3>My Education</h3>
-      <p>Student: Himajasri</p>
-      <p>Roll Number: 10</p>
-      <p>College: Add your college name</p>
-      <p>Course: Add your course name</p>
-    </div>
+ <div class="tag">06 / THE ROAD AHEAD</div>
 
-    <div class="card">
-      <h3>My Goal</h3>
-      <p>To keep learning, improve my technical
-      knowledge and build useful digital solutions.</p>
-    </div>
+ <div class="heading">
+
+  <h2>
+   Every step is<br>
+   part of the story.
+  </h2>
+
+  <p>
+   My learning journey is still unfolding.
+  </p>
+
+ </div>
+
+ <div class="timeline">
+
+  <div class="timeline-item">
+   <h3>Building Foundations</h3>
+   <p>
+    Strengthening my understanding
+    of computer science and programming.
+   </p>
   </div>
+
+  <div class="timeline-item">
+   <h3>Exploring Technology</h3>
+   <p>
+    Discovering development tools,
+    technologies and practical applications.
+   </p>
+  </div>
+
+  <div class="timeline-item">
+   <h3>Creating Projects</h3>
+   <p>
+    Turning classroom learning into
+    practical work and experiences.
+   </p>
+  </div>
+
+  <div class="timeline-item">
+   <h3>Looking Forward</h3>
+   <p>
+    Working towards professional growth
+    and exciting opportunities in technology.
+   </p>
+  </div>
+
+ </div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact" class="contact">
-  <div class="section-tag">05 / GET IN TOUCH</div>
-  <h2>Let's connect!</h2>
-  <p>Thank you for visiting my personal portfolio.</p>
-  <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">
-    Contact Me ↗
-  </a>
+
+ <div class="tag">07 / LET'S CONNECT</div>
+
+ <h2>
+  Have an idea?<br>
+  <span>Let's connect.</span>
+ </h2>
+
+ <p>
+  I'm always interested in learning,
+  sharing ideas and connecting with people.
+ </p>
+
+ <a class="btn green"
+ href="mailto:himajasrichowdhary@gmail.com">
+  Email Me ↗
+ </a>
+
+ <p>
+  himajasrichowdhary@gmail.com
+ </p>
+
 </section>
 
 <footer>
-  Designed with <span>♥</span> by Himajasri
-  <br>
-  © 2026 All Rights Reserved.
+ Designed with <span>♥</span> by K. Himajasri
+ <br>
+ Computer Science · Roll No. 34
+ <br>
+ © 2026 All Rights Reserved.
 </footer>
 
 </body>
